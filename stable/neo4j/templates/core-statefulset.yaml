@@ -19,6 +19,10 @@ spec:
         app: {{ template "neo4j.name" . }}
         component: core
     spec:
+      {{- if .Values.core.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.core.nodeSelector | indent 8 }}
+      {{- end }}
       containers:
       - name: {{ template "neo4j.fullname" . }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
