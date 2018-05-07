@@ -66,6 +66,7 @@ their default values.
 | `core.numberOfServers`               | Number of machines in CORE mode                                                                                                         | `3`                                             |
 | `core.sideCarContainers`             | Sidecar containers to add to the core pod. Example use case is a sidecar which identifies and labels the leader when using the http API | `{}`                                            |
 | `core.initContainers`                | Init containers to add to the core pod. Example use case is a script that installs the APOC library                                     | `{}`                                            |
+| `core.nodeSelector`                  | Node labels for core pod assignment                                                                                                     | `{}`                                            |
 | `core.persistentVolume.storageClass` | Storage class of backing PVC                                                                                                            | `standard` (uses beta storage class annotation) |
 | `core.persistentVolume.size`         | Size of data volume                                                                                                                     | `10Gi`                                          |
 | `core.persistentVolume.mountPath`    | Persistent Volume mount root path                                                                                                       | `/data`                                         |
@@ -73,6 +74,7 @@ their default values.
 | `core.persistentVolume.annotations`  | Persistent Volume Claim annotations                                                                                                     | `{}`                                            |
 | `readReplica.numberOfServers`        | Number of machines in READ_REPLICA mode                                                                                                 | `0`                                             |
 | `readReplica.initContainers`         | Init containers to add to the replica pod. Example use case is a script that installs the APOC library                                  | `{}`                                            |
+| `readReplica.nodeSelector`           | Node labels for read replica pod assignment                                                                                             | `{}`                                            |
 | `resources`                          | Resources required (e.g. CPU, memory)                                                                                                   | `{}`                                            |
 
 The above parameters map to the env variables defined in the
