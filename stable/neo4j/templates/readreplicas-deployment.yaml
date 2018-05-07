@@ -17,6 +17,10 @@ spec:
         release: {{ .Release.Name | quote }}
         component: replica
     spec:
+      {{- if .Values.readReplica.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.readReplica.nodeSelector | indent 8 }}
+      {{- end }}
       containers:
       - name: neo4j
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
