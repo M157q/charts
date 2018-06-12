@@ -26,6 +26,14 @@ authEnabled: true
 testImage: "markhneedham/k8s-kubectl"
 testImageTag: "master"
 
+# Service
+# https://neo4j.com/docs/operations-manual/current/configuration/ports/
+service:
+  # Expose 7474 port for service or not
+  exposeHttpPort: true
+  # Expose 7687 port for service or not
+  exposeBoltPort: false
+
 # Cores
 core:
   numberOfServers: 3
