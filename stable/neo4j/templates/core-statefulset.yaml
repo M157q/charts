@@ -32,6 +32,10 @@ spec:
             value: CORE
           - name: NUMBER_OF_CORES
             value: "{{ .Values.core.numberOfServers }}"
+          - name: NEO4J_dbms_memory_heap_initial__size
+            value: "{{ .Values.core.heapInitialSize }}"
+          - name: NEO4J_dbms_memory_heap_max__size
+            value: "{{ .Values.core.heapMaxSize }}"
           - name: AUTH_ENABLED
             value: "{{ .Values.authEnabled }}"
           - name: NEO4J_causal__clustering_discovery__type
