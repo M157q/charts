@@ -37,6 +37,14 @@ service:
 # Cores
 core:
   numberOfServers: 3
+
+  ## Core server memory configuration
+  # https://neo4j.com/docs/operations-manual/current/performance/memory-configuration/#heap-sizing
+  # https://neo4j.com/developer/guide-performance-tuning/
+  # a heap size between 8G and 16G is large enough to run Neo4j reliably.
+  heapInitialSize: 512M
+  heapMaxSize: 512M
+
   persistentVolume:
 
     ## core server data Persistent Volume mount root path
@@ -96,6 +104,14 @@ core:
 # Read Replicas
 readReplica:
   numberOfServers: 0
+
+  ## Read replica memory configuration
+  # https://neo4j.com/docs/operations-manual/current/performance/memory-configuration/#heap-sizing
+  # https://neo4j.com/developer/guide-performance-tuning/
+  # a heap size between 8G and 16G is large enough to run Neo4j reliably.
+  heapInitialSize: 512M
+  heapMaxSize: 512M
+
   ## Pass extra environment variables to the Neo4j container.
   ##
   # extraVars:
